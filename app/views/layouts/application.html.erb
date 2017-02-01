@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pagina</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,900" rel="stylesheet">
+
+  </head>
+  <body>
+  	<header>
+  		<nav class="be-red white large-padding">
+  			<ul class=" row center-xs around-xs middle-xs">
+  				<li class="col-md">
+  					<h1 class="no-margin" id="logo">  </h1>
+            <%= link_to  "REPUESTOS DE AUTOS" , root_path %>
+  							
+  				
+  				<li class="col-md">
+  					<%= link_to "Inicio", root_path %>
+  				              
+  				</li>
+  				
+				<li class="col-md">
+  					<%= link_to "productos", "/productos", method: :get %>
+            
+  				</li>
+  				<li class="col-md">
+  					<%= link_to "Carrito", "/carrito", method: :get %>
+  				</li>
+  				<li class="col-md">
+  					<%= link_to "Mi Cuenta", user_session_path %>
+  				</li>
+  		
+  			</ul>
+  		</nav>
+      <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+  	</header>
+    
+
+    <%= yield %>
+ </body>
+</html>
