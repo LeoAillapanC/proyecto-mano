@@ -3,11 +3,16 @@
 <!-- <p>numero : <%=number %></p> -->
 <!-- <%end%> -->
 
-
+<!--
 <%= link_to "  ir a welcome", "/welcome/index", method: :post%>
 <p></p>
 <%= link_to "  ir a productos", "/productos", method: :get%>
 <p></p>
 <%= link_to "  ir a categorias", "/categoria", method: :get%>
 <p></p>
-<%= link_to "  ir a carrito", "/carrito", method: :get%>
+<%= link_to "  ir a carrito", "/carrito", method: :get%> -->
+
+%h1 Bienvenido
+
+%p
+  =link_to "Cerrar sesión", destroy_user_session_path, method: :delete

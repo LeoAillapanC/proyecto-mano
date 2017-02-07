@@ -2,10 +2,7 @@
 <html>
   <head>
     <title>CBC</title>
-        <link href="https://fonts.googleapis.com/css?family=Arima+Madurai" rel="stylesheet">
-
- 
-
+     
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
        <%= csrf_meta_tags %>
@@ -13,6 +10,7 @@
 
   </head>
   <body>
+   
   	<header>
   		<nav class="be-red white large-padding">
   			<ul class="no-list row center-xs around-xs middle-xs">
@@ -39,9 +37,13 @@
   		
   			</ul>
   		</nav>
+      
+  	</header>
+     <div style="<%= "display:none;" if alert.nil? && notice.nil? %>">
       <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-  	</header>
+
+    </div>
     
 
     <%= yield %>
