@@ -14,3 +14,6 @@
  *= require bootstrap-material-design
  *= require_self
  */
+body{
+	background-color: red !important;
+}
