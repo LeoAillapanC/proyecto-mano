@@ -13,6 +13,14 @@ gem 'haml-rails'
 gem 'bootstrap-sass'
 #tema material disgn para bootstrap
 gem 'bootstrap-material-design'
+#paperclip para subir imagenes
+gem 'paperclip'
+#gemas para pruebas
+gem 'shoulda-matchers'
+gem 'rspec-rails'
+
+
+
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
