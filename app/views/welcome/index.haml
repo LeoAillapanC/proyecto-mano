@@ -12,7 +12,34 @@
 <p></p>
 <%= link_to "  ir a carrito", "/carrito", method: :get%> -->
 
+%header.blue.big-padding
+	.col-md-10.no-float.center-block
+		.col-md-6.no-padding.inline-block
+			=image_tag "tiendus.png",width:"100"
+			%h1.white-text.ultra-big.kostic
+				%strong
+				Comercial Brenda Cuellar
+		.col-md-5.inline-block
+			=image_tag "mono.png",width:"200"
+
+%header
+	%nav.green
+		%ul.no-list.no-padding.text-center
+			%li.col-md-4.inline-block.tall-padding
+				=link_to root_path,class:"right-space white-text" do
+					%i.mdi-action-shopping-basket
+						Tienda
+			%li.col-md.inline-block.text-center.tall-padding
+				=image_tag "tiendus.png",height:"25px"
+			%li.col-md-4.inline-block.tall-padding
+				=link_to carrito_path,class:"white-text" do
+					Mi Carrito
+
+%h1 hola mundo
+
+ 
+
 %h1 Bienvenido
 
 %p
-  =link_to "Cerrar sesión", destroy_user_session_path, method: :delete
+	=link_to "Cerrar sesión", destroy_user_session_path, method: :delete
