@@ -4,6 +4,8 @@
 <!-- <%end%> -->
 
 
+<h1> Bienvenido </h1>
+
 <%= link_to "  ir a welcome", "/welcome/index", method: :post%>
 <p></p>
 <%= link_to "  ir a productos", "/productos", method: :get%>
@@ -11,3 +13,5 @@
 <%= link_to "  ir a categorias", "/categoria", method: :get%>
 <p></p>
 <%= link_to "  ir a carrito", "/carrito", method: :get%>
+<p></p>
+<%= link_to "  Cerrar sesion", destroy_user_session_path, method: :delete%>

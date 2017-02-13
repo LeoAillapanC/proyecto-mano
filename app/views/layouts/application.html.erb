@@ -6,10 +6,19 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,900" rel="stylesheet">
 
   </head>
   <body>
+
+  <div style="<%="display:none; " if alert.nil? && notice.nil? %> ">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+  </div>
+
+
+
   	<header>
   		<nav class="be-red white large-padding">
   			<ul class=" row center-xs around-xs middle-xs">
@@ -36,8 +45,7 @@
   		
   			</ul>
   		</nav>
-      <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+      
   	</header>
     
 
