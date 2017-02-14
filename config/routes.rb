@@ -2,13 +2,11 @@ Rails.application.routes.draw do
 
 
 
-
-
-	
-
   devise_for :users, path: 'auto', path_names: { sing_in: 'login', sing_out:'logout',password: 'secret',confirmation:'verification', unlock:'unblock',registration:'register',sing_up:'cmon_let_me_in'}
 	resources :articles, only: [:create, :show]
 	resources :carrito
+
+	post "/emails/create", as: :create_email
 =begin
 			RESOURCE HACE TODAS ESTAS FUNCIONES	
 		get "/articles" index

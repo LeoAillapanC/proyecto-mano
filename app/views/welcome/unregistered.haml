@@ -1,25 +1,3 @@
-%header.green.big-padding
-	.col-md-10.no-float.center-block 
-
-	.col-md-6.no-padding.inline-block 
-		=image_tag "tiendus.png", width:"100"
-		%h1.white-text
-			%strong 
-				ofrece tus productos digitales a tu adudencia
-
-	.col-md-5.inline-block	
-		=image_tag "mono.png", width:"300"
-
-
-
-
-
-
-
-
-
-
-
 
 
 %p ingresa sesion papa
@@ -29,3 +7,35 @@
 
 %p
 	= link_to "  Crear cuenta", new_user_registration_path
+
+
+%header.green.big-padding
+	%div.text-center
+		.col-md-10.no-float.center-block 
+
+		.col-md-6.no-padding.inline-block 
+			=image_tag "tiendus.png", width:"100"
+			%h1.white-text.Kostic.bigger
+				%strong 
+					ofrece tus productos digitales a tu adudencia
+
+		.col-md-5.inline-block	
+			=image_tag "mono.png", width:"300"
+
+
+
+.top-space.big-padding.bottom-space
+	.col-md-11.col-xs-12.center-block.no-float
+		=form_tag(create_email_path,method: :post,remote:true, id: "emails-form") do
+			=email_field_tag "email", nil, class:"col-xs-12 inline-block text-center landing-form",placeholder:"Escribe aqui tu mail" 
+		#email-info.red.white-text.large-padding
+
+
+
+
+
+
+
+
+
+
