@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170214210936) do
+ActiveRecord::Schema.define(version: 20170218220817) do
+
+  create_table "in_shopping_carts", force: :cascade do |t|
+    t.integer  "product_id"
+    t.integer  "shopping_cart_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.index ["product_id"], name: "index_in_shopping_carts_on_product_id"
+    t.index ["shopping_cart_id"], name: "index_in_shopping_carts_on_shopping_cart_id"
+  end
 
   create_table "myemails", force: :cascade do |t|
     t.string   "email"
@@ -33,6 +42,13 @@ ActiveRecord::Schema.define(version: 20170214210936) do
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
     t.index ["user_id"], name: "index_products_on_user_id"
+  end
+
+  create_table "shopping_carts", force: :cascade do |t|
+    t.integer  "status",     default: 0
+    t.string   "ip"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "users", force: :cascade do |t|

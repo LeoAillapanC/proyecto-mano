@@ -1,3 +1,11 @@
+img{
+	max-width:100% !important;
+}
+
+
+
+
+
 $green: #16a085;
 $grey: #5A6576;
 $other-grey: #E7ECEE;
@@ -50,7 +58,9 @@ $light-blue: #3498DB;
 
 
 /* paddings */
-
+.tall-padding{
+	padding :10px 5px;
+}
 .big-padding{
 	padding:2em;
 }
@@ -74,4 +84,12 @@ $light-blue: #3498DB;
 
 .ultra-big{
 	font-size:5em;
+}
+
+
+
+
+
+.right-space{
+	margin-right:1em;
 }
