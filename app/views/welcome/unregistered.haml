@@ -1,12 +1,16 @@
 
+%header.light-blue.big-padding
+	%div.text-center
+		.col-md-10.no-float.center-block 
+			%h1.white-text.Kostic.big.bold
+				Por favor Ingresa sesion para poder comprar
+			.blue-text.Kostic.big.bold
+				= link_to "  iniciar sesion", new_user_session_path
 
-%p ingresa sesion papa
+			.blue-text.Kostic.big.bold
+				= link_to "  Crear cuenta", new_user_registration_path
 
-%p
-	= link_to "  iniciar sesion", new_user_session_path
 
-%p
-	= link_to "  Crear cuenta", new_user_registration_path
 
 
 %header.green.big-padding
@@ -14,10 +18,10 @@
 		.col-md-10.no-float.center-block 
 
 		.col-md-6.no-padding.inline-block 
-			=image_tag "tiendus.png", width:"100"
+			=image_tag "logoleo.png", width:"300"
 			%h1.white-text.Kostic.bigger
 				%strong 
-					ofrece tus productos digitales a tu adudencia
+					Aqui encontraras todo tipo de repuestos para autos
 
 		.col-md-5.inline-block	
 			=image_tag "mono.png", width:"300"
@@ -25,6 +29,9 @@
 
 
 .top-space.big-padding.bottom-space
+	.col-md-10.no-float.left-space
+		%h1.grey-text.Kostic.big.bold
+			Contactanos!
 	.col-md-11.col-xs-12.center-block.no-float
 		=form_tag(create_email_path,method: :post,remote:true, id: "emails-form") do
 			=email_field_tag "email", nil, class:"col-xs-12 inline-block text-center landing-form",placeholder:"Escribe aqui tu mail" 
