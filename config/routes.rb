@@ -26,6 +26,7 @@ Rails.application.routes.draw do
 
   	post 'welcome/index'
   	get "special", to:"welcome#index"
+  	get "/ok", to: "welcome#payment_succed"
 
 	authenticated :user do
   		root 'welcome#index'

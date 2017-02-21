@@ -2,16 +2,18 @@
 	%nav.green
 		%ul.no-list.no-padding.text-center
 			%li.col-md-4.inline-block.tall-padding
+				=link_to products_path, class:"right-space white-text" do
+					%i.mdi-action-trending-up 
+					Ver productos
 				-if user_signed_in?
 					=link_to root_path, class:"right-space white-text" do
 						%i.mdi-action-account-box
 						Mi Tienda
-					=link_to root_path, class:"right-space white-text" do
-						%i.mdi-action-trending-up 
-						Pedidos
+					
 					=link_to root_path, class:"right-space white-text" do
 						%i.mdi-action-alarm 
 						Descuentos
+
 			%li.col-md-4.inline-block.text-center.tall-padding
 				=image_tag "tiendus.png", height:"25px"
 			%li.col-md-4.inline-block.tall-padding

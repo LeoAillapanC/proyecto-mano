@@ -10,9 +10,23 @@
 				%tr{id: "#{product.id}"}
 					%td= product.name
 					%td= product.pricing
-					%td Eliminar
-	.top_space.large-padding.text-right.right-space#payment_form
+					%td= link_to "Eliminar",i_sh,method: :delete
+	.top-space.large-padding.text-right.col-md-9.right-space#payment_form
 		%p.medium
-			%strong
-				Total: $ 
-				=@shopping_cart.total
+		
+		%strong
+			Total: $ 
+			=@shopping_cart.total
+		-if user_signed_in?
+			=link_to "/ok",class:"btn btn-success" do
+				Cotizar
+		.col-md-11.no-float
+			-if !user_signed_in?
+				Ingresa sesion para poder hacer la cotizacion
+				.col-md-11.no-float
+				=link_to new_user_session_path,class:"btn btn-success" do
+					Iniciar Sesion
+
+
+
+
