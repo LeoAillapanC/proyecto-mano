@@ -5,7 +5,12 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
+    
     @products = Product.all
+    @products = Product.search(params[:searchbox])
+    respond_to do |format|
+      format.html
+    end      
   end
 
   def show
@@ -71,6 +76,8 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name, :pricing, :description, :stock, :user_id,:avatar)
+      params.require(:product).permit(:name, :pricing, :description, :stock, :categoria, :user_id,:avatar)
     end
+
+
 end
