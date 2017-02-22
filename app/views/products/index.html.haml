@@ -1,9 +1,10 @@
-%h1.text-center Lista de productos
+%h1.text-center 
+  Lista de productos
 .pull-right
   = form_tag({:controller => "products", :action => "index"}, :method => :get) do 
     =text_field_tag "searchbox", params[:searchbox],placeholder:"Buscar Por Categoria"
     =submit_tag "Buscar", :name => nil
-%table.col-md-12.no-float
+%table.col-md-10.no-float
   %thead
     %tr
       %th Nombre
@@ -24,8 +25,10 @@
         %td= product.stock
         %td= product.categoria
         %td= link_to 'Mostrar', product
-        %td= link_to 'Editar', edit_product_path(product)
-        %td= link_to 'Eliminar', product, :method => :delete, :data => { :confirm => 'Estas Seguro?' }
+        -if (user_signed_in? )
+          
+          %td= link_to 'Editar', edit_product_path(product)
+          %td= link_to 'Eliminar', product, :method => :delete, :data => { :confirm => 'Estas Seguro?' }
 
 %br
 

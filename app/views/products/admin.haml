@@ -9,7 +9,7 @@
 		.col-md-3.inline-block
 			%p.big.no-margin.red-text 1000 pesos
 		%nav.top-space
-			=link_to product_path(id: @product.id,client:true), class:"other-grey large-padding text-center col-md-4 inline-block" do
+			=link_to product_path(id: @product.id,client:false), class:"other-grey large-padding text-center col-md-4 inline-block" do
 				Ver como cliente
 			=link_to edit_product_path(@product), class:"other-grey large-padding text-center col-md-4 inline-block" do
 				Editar Producto

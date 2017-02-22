@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 	post "/emails/create", as: :create_email
 	get "/carrito", to: "shopping_carts#show"
 	get "add/:product_id", as: :add_to_cart,to: "in_shopping_carts#create"
+	get "/ordenes", to: "ordenes#index"
 =begin
 			RESOURCE HACE TODAS ESTAS FUNCIONES	
 		get "/articles" index

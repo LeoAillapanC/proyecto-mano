@@ -2,18 +2,19 @@
 <html>
   <head>
     <title>Repuestos</title>
-    <%= csrf_meta_tags %>
+    
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
 
   </head>
   
   <body>
 
-    <div style="<%="display:none; " if alert.nil? && notice.nil? %> ">
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
+    <div class="blue white-text large-padding bold text-center" style="<%= "display:none;" if alert.nil? && notice.nil? %>">
+        <p class="no-padding no-margin inline-block"><%= notice %><%= alert %></p>
+        <span class="pull-right close-parent">x</span>
     </div>
     <%= render "partials/nav" %>
 

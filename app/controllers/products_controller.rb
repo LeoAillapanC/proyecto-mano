@@ -6,8 +6,8 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     
-    @products = Product.all
-    @products = Product.search(params[:searchbox])
+    @products = Product.all.order("pricing")
+    @products = Product.search(params[:searchbox]).order("pricing")
     respond_to do |format|
       format.html
     end      
@@ -33,6 +33,9 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     @product.user =current_user
+    if @product.categoria nil?
+      @product.categoria="otros"
+    end
     respond_to do |format|
       if @product.save
         format.html { redirect_to @product, notice: 'Producto Creado.' }

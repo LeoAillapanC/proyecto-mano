@@ -1,5 +1,10 @@
 class Product < ApplicationRecord
   belongs_to :user
+  has_many :in_shopping_carts
+  has_one :shopping_cart, through: :in_shopping_carts
+  has_many :my_payments, through: :shopping_cart
+
+
   validates_presence_of :name,:user, :pricing, :stock
   validates :pricing, numericality: {greater_than: 0 }
   validates :stock, numericality: {greater_than: 0 }
@@ -14,4 +19,10 @@ class Product < ApplicationRecord
   		unscoped
   	end
   end
+
+  def sales
+    my_payments
+  end
+
+
 end
