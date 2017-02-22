@@ -13,4 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//agregado material design  y bootstrap
+//=require bootstrap
+//=require bootstrap-material-design
 //= require_tree .

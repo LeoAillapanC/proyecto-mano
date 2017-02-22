@@ -1,0 +1,27 @@
+
+$colors : (
+    green: #16a085,
+    grey: #5A6576,
+    other-grey: #E7ECEE,
+    blue: #058CC5,
+    red: #d2527f,
+    light-blue: #3498DB,
+);
+
+@each $color_name,$color in $colors{
+    .#{$color-name}{
+        background-color: $color;
+    }
+    .#{$color-name}-text{
+        color: $color;
+    }
+}
+/*c tama;o barra superior */ 
+.big-padding{
+	padding:2em;
+}
+
+/* float no importa! */
+.no-float {
+	float: none !important;
+}
