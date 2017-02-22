@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
 
 
+
   resources :products
   resources :in_shopping_carts, only: [ :create, :destroy, :new, :show]
 
@@ -30,11 +31,12 @@ Rails.application.routes.draw do
   	get "/ok", to: "welcome#payment_succed"
 
 	authenticated :user do
-  		root 'welcome#index'
+  		root 'products#index'
 	end
 	unauthenticated :user do
 		devise_scope :user do
 			root 'welcome#unregistered', as: :unregistered_root
 		end
 	end
+  
 end

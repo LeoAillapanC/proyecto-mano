@@ -33,9 +33,6 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     @product.user =current_user
-    if @product.categoria nil?
-      @product.categoria="otros"
-    end
     respond_to do |format|
       if @product.save
         format.html { redirect_to @product, notice: 'Producto Creado.' }
