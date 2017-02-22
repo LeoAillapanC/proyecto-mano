@@ -1,27 +1,82 @@
+@import 'bootstrap';
 
-$colors : (
-    green: #16a085,
-    grey: #5A6576,
-    other-grey: #E7ECEE,
-    blue: #058CC5,
-    red: #d2527f,
-    light-blue: #3498DB,
-);
+$green: #16a085;
+$grey: #5A6576;
+$other-grey: #E7ECEE;
+$blue: #247998;
+$red: #d2527f;
+$light-blue: #3498DB;
 
-@each $color_name,$color in $colors{
-    .#{$color-name}{
-        background-color: $color;
-    }
-    .#{$color-name}-text{
-        color: $color;
-    }
+/* COLORES */
+.white{
+	background-color:white;
 }
-/*c tama;o barra superior */ 
+.white-text{
+	color:white;
+}
+.green{
+	background-color: $green;
+}
+.green-text{
+	color: $green;
+}
+.blue{
+	background-color: $blue;
+}
+.blue-text{
+	color: $blue;
+}
+.light-blue{
+	background-color: $light-blue;
+}
+.light-blue-text{
+	color: $light-blue;
+}
+.red{
+	background-color: $red;
+}
+.red-text{
+	color: $red;
+}
+.grey{
+	background-color: $grey;
+}
+.grey-text{
+	color: $grey;
+}
+.other-grey{
+	background-color: $other-grey;
+}
+.other-grey-text{
+	color: $other-grey;
+}
+
+/*dise;o barra superior*/
 .big-padding{
-	padding:2em;
+	padding:1em;
+}
+.no-padding{
+	padding:0;
 }
 
-/* float no importa! */
-.no-float {
+/*no float!*/
+.no-float{
 	float: none !important;
+}
+.inline-block{
+	float: none !important;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+/*Tamaños*/
+.ultra-big{
+	font-size:2em;
+}
+.casi-big{
+	font-size:26.5px;
+}
+
+.tall-padding{
+	padding: 10px 5px;
 }
