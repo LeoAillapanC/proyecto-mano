@@ -1,0 +1,4 @@
+class CarritoController < ApplicationController
+
+
+end
