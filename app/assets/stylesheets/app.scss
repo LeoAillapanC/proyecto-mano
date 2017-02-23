@@ -1,19 +1,23 @@
-@import 'bootstrap';
+img{
+	max-width:100% !important;
+}
+
+a:hover{
+	color: inherit !important;
+}
+.close-parent{
+	cursor:pointer;
+}
+
+
 
 $green: #16a085;
 $grey: #5A6576;
 $other-grey: #E7ECEE;
-$blue: #247998;
+$blue: #058CC5;
 $red: #d2527f;
 $light-blue: #3498DB;
 
-/* COLORES */
-.white{
-	background-color:white;
-}
-.white-text{
-	color:white;
-}
 .green{
 	background-color: $green;
 }
@@ -26,12 +30,6 @@ $light-blue: #3498DB;
 .blue-text{
 	color: $blue;
 }
-.light-blue{
-	background-color: $light-blue;
-}
-.light-blue-text{
-	color: $light-blue;
-}
 .red{
 	background-color: $red;
 }
@@ -39,7 +37,7 @@ $light-blue: #3498DB;
 	color: $red;
 }
 .grey{
-	background-color: $grey;
+	background-color: $other-grey;
 }
 .grey-text{
 	color: $grey;
@@ -48,35 +46,55 @@ $light-blue: #3498DB;
 	background-color: $other-grey;
 }
 .other-grey-text{
-	color: $other-grey;
+	color: $grey;
+}
+.light-blue{
+	background-color: $light-blue;
+}
+.light-blue-text{
+	color: $light-blue;
+}
+.white{
+	background-color: white;
+}
+.white-text{
+	color: white;
 }
 
-/*dise;o barra superior*/
+
+/* paddings */
+.tall-padding{
+	padding :10px 5px;
+}
 .big-padding{
-	padding:1em;
+	padding:2em;
 }
 .no-padding{
 	padding:0;
 }
 
-/*no float!*/
+/* alinamiento */
+
 .no-float{
 	float: none !important;
 }
 .inline-block{
 	float: none !important;
-	display: inline-block;
-	vertical-align: middle;
+	display:inline-block;
+	vertical-align:middle;
 }
 
-/*Tamaños*/
+
+/*tamaños */
+
 .ultra-big{
-	font-size:2em;
-}
-.casi-big{
-	font-size:26.5px;
+	font-size:5em;
 }
 
-.tall-padding{
-	padding: 10px 5px;
+
+
+
+
+.right-space{
+	margin-right:1em;
 }

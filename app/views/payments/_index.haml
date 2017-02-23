@@ -1,0 +1,16 @@
+%table.table.table-striped.table-hover
+	%thead
+		%tr
+			%th #
+			%th Producto
+			%th valor
+			%th Fecha
+			%th 
+	%tbody
+		-@orders.each do |order|
+			-order.products_by_user(current_user).each do |product|
+				%tr
+					%td= order.id
+					%td= product.name
+					%td= product.pricing
+					%td= order.created_at

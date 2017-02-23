@@ -1,20 +1,51 @@
-%header.blue.big-padding
-	.col-md-10.no-float.center-block
-		.col-md-6.no-padding.inline-block
-			=image_tag "tiendus.png",width:"100"
-		.col-md-6.no-padding.inline-block
-			%h1.white-text.ultra-big.kostic
-				%strong
-				Comercial Brenda Cuellar
-		.col-md-5.inline-block
-			=image_tag "mono.png",width:"80"
+%header.green
+	%div.text-center
+		.col-md-12.no-padding.inline-block 
+			=image_tag "logoleo.png", width:"300"
 
-%header
-	%nav.green
-		%ul.no-list.no-padding.text-center
-			%li.col-md-0.inline-block.tall-padding
-				=link_to root_path,class:"right-space white-text" do
-					%i.mdi-action-shopping-basket
-						Tienda
-			%li.col-md-5.inline-block.text-center.tall-padding
-				=image_tag "tiendus.png",height:"25px"
+%header.light-blue.large-padding
+	%div.text-center
+		.col-md-9.no-float.center-block 
+			%h1.white-text.Kostic.big.bold
+				Por favor Ingresa sesion para poder comprar
+			.Kostic.big.bold
+				=link_to new_user_session_path,class:"btn btn-primary" do
+					Iniciar Sesion
+
+			.Kostic.big.bold
+				=link_to new_user_registration_path,class:"btn btn-danger" do
+					Crear Cuenta
+
+
+
+
+%header.green.big-padding
+	%div.text-center
+		.col-md-12.no-padding.inline-block
+			%h1.white-text.Kostic.bigger
+				%strong 
+					Aqui encontraras todo tipo de repuestos para autos
+
+		.col-md-12.inline-block	
+			=image_tag "mono.png", width:"620"
+
+
+
+.top-space.big-padding.bottom-space
+	.col-md-10.no-float.left-space
+		%h1.grey-text.Kostic.big.bold
+			Contactanos!
+	.col-md-11.col-xs-12.center-block.no-float
+		=form_tag(create_email_path,method: :post,remote:true, id: "emails-form") do
+			=email_field_tag "email", nil, class:"col-xs-12 inline-block text-center landing-form",placeholder:"Escribe aqui tu mail" 
+		#email-info.red.white-text.large-padding
+
+
+
+
+
+
+
+
+
+
