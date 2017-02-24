@@ -1305,3 +1305,946 @@ Processing by ProductsController#show as HTML
 Completed 200 OK in 55ms (Views: 49.8ms | ActiveRecord: 1.3ms)
 
 
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /home/marcos/proyectosfinal/marcos/app/models/application_record.rb:1)
+Started GET "/products/1" for 127.0.0.1 at 2017-02-24 17:42:40 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mShoppingCart Load (0.3ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/admin.haml within layouts/application
+  Rendered products/admin.haml within layouts/application (4.5ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 3]]
+  Rendered partials/_nav.haml (15.9ms)
+Completed 200 OK in 303ms (Views: 254.6ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/products/1?client=false" for 127.0.0.1 at 2017-02-24 17:42:43 -0300
+Processing by ProductsController#show as HTML
+  Parameters: {"client"=>"false", "id"=>"1"}
+  [1m[36mShoppingCart Load (0.4ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/admin.haml within layouts/application
+  Rendered products/admin.haml within layouts/application (2.2ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 3]]
+  Rendered partials/_nav.haml (4.4ms)
+Completed 200 OK in 45ms (Views: 38.2ms | ActiveRecord: 1.9ms)
+
+
+Started DELETE "/auto/sign_out" for 127.0.0.1 at 2017-02-24 17:42:45 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"kopKIG4yaN8lUUQkBwypqQ0QGYdwWPTArxVFSNZ0pQqA9e2TRU21dzUxtMeBRxBddlSmUxMnuYRTIXQB+fcNTQ=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mShoppingCart Load (0.2ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 10ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-24 17:42:45 -0300
+Processing by WelcomeController#unregistered as HTML
+  [1m[36mShoppingCart Load (0.3ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering welcome/unregistered.haml within layouts/landing
+  Rendered welcome/unregistered.haml within layouts/landing (4.4ms)
+Completed 200 OK in 35ms (Views: 33.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/auto/sign_in" for 127.0.0.1 at 2017-02-24 17:42:46 -0300
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mShoppingCart Load (0.3ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (13.1ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 3]]
+  Rendered partials/_nav.haml (4.9ms)
+Completed 200 OK in 52ms (Views: 48.6ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/auto/sign_in" for 127.0.0.1 at 2017-02-24 17:42:51 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5HzTHxZ7jayO6ZHUI6KsgivQxTtxUeUPajVji3qWCs4idxrNdXOBT7+XlX396vRbcE0D8SuZjBXIS2NwyPXodA==", "user"=>{"email"=>"mrgozu@hotmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  [1m[36mShoppingCart Load (0.3ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "mrgozu@hotmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "sign_in_count" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["current_sign_in_at", 2017-02-24 20:42:51 UTC], ["sign_in_count", 2], ["updated_at", 2017-02-24 20:42:51 UTC], ["id", 2]]
+  [1m[35m (11.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 153ms (ActiveRecord: 13.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-24 17:42:51 -0300
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Processing by ProductsController#index as HTML
+  [1m[36mShoppingCart Load (0.2ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering products/index.html.haml within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY pricing[0m
+  Rendered products/index.html.haml within layouts/application (4.7ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 3]]
+  Rendered partials/_nav.haml (5.2ms)
+Completed 200 OK in 41ms (Views: 39.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-02-24 17:42:55 -0300
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mShoppingCart Load (0.3ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.haml within layouts/application
+  Rendered in_shopping_carts/_form.haml (0.9ms)
+  Rendered products/show.html.haml within layouts/application (4.0ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 3]]
+  Rendered partials/_nav.haml (4.7ms)
+Completed 200 OK in 58ms (Views: 40.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/add/1" for 127.0.0.1 at 2017-02-24 17:42:56 -0300
+Processing by InShoppingCartsController#create as HTML
+  Parameters: {"product_id"=>"1"}
+  [1m[36mShoppingCart Load (0.3ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (10.2ms)[0m  [1m[32mINSERT INTO "in_shopping_carts" ("product_id", "shopping_cart_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["product_id", 1], ["shopping_cart_id", 3], ["created_at", 2017-02-24 20:42:56 UTC], ["updated_at", 2017-02-24 20:42:56 UTC]]
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/carrito
+Completed 302 Found in 26ms (ActiveRecord: 18.3ms)
+
+
+Started GET "/carrito" for 127.0.0.1 at 2017-02-24 17:42:56 -0300
+Processing by ShoppingCartsController#show as HTML
+  [1m[36mShoppingCart Load (0.3ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering shopping_carts/show.haml within layouts/application
+  [1m[36mInShoppingCart Load (0.2ms)[0m  [1m[34mSELECT "in_shopping_carts".* FROM "in_shopping_carts" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 3]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("products"."pricing") FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 3]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered shopping_carts/show.haml within layouts/application (8.9ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 3]]
+  Rendered partials/_nav.haml (4.6ms)
+Completed 200 OK in 57ms (Views: 53.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/add/1" for 127.0.0.1 at 2017-02-24 17:45:26 -0300
+Processing by InShoppingCartsController#create as HTML
+  Parameters: {"product_id"=>"1"}
+  [1m[36mShoppingCart Load (0.4ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "in_shopping_carts" ("product_id", "shopping_cart_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["product_id", 1], ["shopping_cart_id", 3], ["created_at", 2017-02-24 20:45:26 UTC], ["updated_at", 2017-02-24 20:45:26 UTC]]
+  [1m[35m (16.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/carrito
+Completed 302 Found in 23ms (ActiveRecord: 18.0ms)
+
+
+Started GET "/carrito" for 127.0.0.1 at 2017-02-24 17:45:26 -0300
+Processing by ShoppingCartsController#show as HTML
+  [1m[36mShoppingCart Load (0.2ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering shopping_carts/show.haml within layouts/application
+  [1m[36mInShoppingCart Load (0.2ms)[0m  [1m[34mSELECT "in_shopping_carts".* FROM "in_shopping_carts" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 3]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("products"."pricing") FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 3]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered shopping_carts/show.haml within layouts/application (8.0ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 3]]
+  Rendered partials/_nav.haml (4.3ms)
+Completed 200 OK in 44ms (Views: 40.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/ok" for 127.0.0.1 at 2017-02-24 17:45:30 -0300
+Processing by WelcomeController#payment_succed as HTML
+  [1m[36mShoppingCart Load (0.3ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering welcome/payment_succed.haml within layouts/application
+  [1m[36mInShoppingCart Load (0.2ms)[0m  [1m[34mSELECT "in_shopping_carts".* FROM "in_shopping_carts" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 3]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered welcome/payment_succed.haml within layouts/application (5.9ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 3]]
+  Rendered partials/_nav.haml (5.0ms)
+Completed 200 OK in 45ms (Views: 42.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/carrito" for 127.0.0.1 at 2017-02-24 17:45:56 -0300
+Processing by ShoppingCartsController#show as HTML
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (6.1ms)[0m  [1m[32mINSERT INTO "shopping_carts" ("ip", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["ip", "127.0.0.1"], ["created_at", 2017-02-24 20:45:56 UTC], ["updated_at", 2017-02-24 20:45:56 UTC]]
+  [1m[35m (13.7ms)[0m  [1m[35mCOMMIT[0m
+  Rendering shopping_carts/show.haml within layouts/application
+  [1m[36mInShoppingCart Load (0.3ms)[0m  [1m[34mSELECT "in_shopping_carts".* FROM "in_shopping_carts" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 4]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("products"."pricing") FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 4]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered shopping_carts/show.haml within layouts/application (6.6ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 4]]
+  Rendered partials/_nav.haml (4.1ms)
+Completed 200 OK in 64ms (Views: 39.5ms | ActiveRecord: 21.3ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-02-24 17:46:06 -0300
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mShoppingCart Load (0.9ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.haml within layouts/application
+  Rendered in_shopping_carts/_form.haml (1.9ms)
+  Rendered products/show.html.haml within layouts/application (8.0ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 4]]
+  Rendered partials/_nav.haml (6.8ms)
+Completed 200 OK in 80ms (Views: 68.2ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/add/1" for 127.0.0.1 at 2017-02-24 17:47:42 -0300
+Processing by InShoppingCartsController#create as HTML
+  Parameters: {"product_id"=>"1"}
+  [1m[36mShoppingCart Load (0.4ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "in_shopping_carts" ("product_id", "shopping_cart_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["product_id", 1], ["shopping_cart_id", 4], ["created_at", 2017-02-24 20:47:42 UTC], ["updated_at", 2017-02-24 20:47:42 UTC]]
+  [1m[35m (15.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/carrito
+Completed 302 Found in 21ms (ActiveRecord: 16.5ms)
+
+
+Started GET "/carrito" for 127.0.0.1 at 2017-02-24 17:47:43 -0300
+Processing by ShoppingCartsController#show as HTML
+  [1m[36mShoppingCart Load (0.2ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering shopping_carts/show.haml within layouts/application
+  [1m[36mInShoppingCart Load (0.3ms)[0m  [1m[34mSELECT "in_shopping_carts".* FROM "in_shopping_carts" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 4]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("products"."pricing") FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 4]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered shopping_carts/show.haml within layouts/application (9.0ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 4]]
+  Rendered partials/_nav.haml (5.4ms)
+Completed 200 OK in 48ms (Views: 45.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/carrito" for 127.0.0.1 at 2017-02-24 17:47:51 -0300
+Processing by ShoppingCartsController#show as HTML
+  [1m[36mShoppingCart Load (0.4ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering shopping_carts/show.haml within layouts/application
+  [1m[36mInShoppingCart Load (0.3ms)[0m  [1m[34mSELECT "in_shopping_carts".* FROM "in_shopping_carts" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 4]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("products"."pricing") FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 4]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered shopping_carts/show.haml within layouts/application (8.8ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 4]]
+  Rendered partials/_nav.haml (3.9ms)
+Completed 200 OK in 45ms (Views: 41.4ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/carrito" for 127.0.0.1 at 2017-02-24 17:47:53 -0300
+Processing by ShoppingCartsController#show as HTML
+  [1m[36mShoppingCart Load (0.9ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering shopping_carts/show.haml within layouts/application
+  [1m[36mInShoppingCart Load (0.5ms)[0m  [1m[34mSELECT "in_shopping_carts".* FROM "in_shopping_carts" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 4]]
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT SUM("products"."pricing") FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 4]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered shopping_carts/show.haml within layouts/application (11.6ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 4]]
+  Rendered partials/_nav.haml (4.6ms)
+Completed 200 OK in 54ms (Views: 48.1ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-02-24 17:48:10 -0300
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mShoppingCart Load (0.8ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.haml within layouts/application
+  Rendered in_shopping_carts/_form.haml (1.2ms)
+  Rendered products/show.html.haml within layouts/application (5.0ms)
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 4]]
+  Rendered partials/_nav.haml (7.4ms)
+Completed 200 OK in 56ms (Views: 47.6ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/add/1" for 127.0.0.1 at 2017-02-24 17:48:14 -0300
+Processing by InShoppingCartsController#create as HTML
+  Parameters: {"product_id"=>"1"}
+  [1m[36mShoppingCart Load (0.7ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "in_shopping_carts" ("product_id", "shopping_cart_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["product_id", 1], ["shopping_cart_id", 4], ["created_at", 2017-02-24 20:48:14 UTC], ["updated_at", 2017-02-24 20:48:14 UTC]]
+  [1m[35m (14.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/carrito
+Completed 302 Found in 21ms (ActiveRecord: 16.7ms)
+
+
+Started GET "/carrito" for 127.0.0.1 at 2017-02-24 17:48:14 -0300
+Processing by ShoppingCartsController#show as HTML
+  [1m[36mShoppingCart Load (0.3ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering shopping_carts/show.haml within layouts/application
+  [1m[36mInShoppingCart Load (0.3ms)[0m  [1m[34mSELECT "in_shopping_carts".* FROM "in_shopping_carts" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 4]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("products"."pricing") FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 4]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered shopping_carts/show.haml within layouts/application (8.1ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 4]]
+  Rendered partials/_nav.haml (4.0ms)
+Completed 200 OK in 48ms (Views: 45.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/add/1" for 127.0.0.1 at 2017-02-24 17:48:16 -0300
+Processing by InShoppingCartsController#create as HTML
+  Parameters: {"product_id"=>"1"}
+  [1m[36mShoppingCart Load (0.4ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "in_shopping_carts" ("product_id", "shopping_cart_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["product_id", 1], ["shopping_cart_id", 4], ["created_at", 2017-02-24 20:48:16 UTC], ["updated_at", 2017-02-24 20:48:16 UTC]]
+  [1m[35m (11.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/carrito
+Completed 302 Found in 18ms (ActiveRecord: 13.4ms)
+
+
+Started GET "/carrito" for 127.0.0.1 at 2017-02-24 17:48:16 -0300
+Processing by ShoppingCartsController#show as HTML
+  [1m[36mShoppingCart Load (0.6ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering shopping_carts/show.haml within layouts/application
+  [1m[36mInShoppingCart Load (0.8ms)[0m  [1m[34mSELECT "in_shopping_carts".* FROM "in_shopping_carts" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 4]]
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT SUM("products"."pricing") FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 4]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered shopping_carts/show.haml within layouts/application (13.7ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 4]]
+  Rendered partials/_nav.haml (4.4ms)
+Completed 200 OK in 51ms (Views: 45.2ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/add/1" for 127.0.0.1 at 2017-02-24 17:48:17 -0300
+Processing by InShoppingCartsController#create as HTML
+  Parameters: {"product_id"=>"1"}
+  [1m[36mShoppingCart Load (0.4ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "in_shopping_carts" ("product_id", "shopping_cart_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["product_id", 1], ["shopping_cart_id", 4], ["created_at", 2017-02-24 20:48:17 UTC], ["updated_at", 2017-02-24 20:48:17 UTC]]
+  [1m[35m (15.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/carrito
+Completed 302 Found in 22ms (ActiveRecord: 17.4ms)
+
+
+Started GET "/carrito" for 127.0.0.1 at 2017-02-24 17:48:17 -0300
+Processing by ShoppingCartsController#show as HTML
+  [1m[36mShoppingCart Load (0.2ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering shopping_carts/show.haml within layouts/application
+  [1m[36mInShoppingCart Load (0.2ms)[0m  [1m[34mSELECT "in_shopping_carts".* FROM "in_shopping_carts" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 4]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT SUM("products"."pricing") FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 4]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered shopping_carts/show.haml within layouts/application (11.9ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 4]]
+  Rendered partials/_nav.haml (4.5ms)
+Completed 200 OK in 58ms (Views: 53.7ms | ActiveRecord: 2.5ms)
+
+
+Started DELETE "/in_shopping_carts/6" for 127.0.0.1 at 2017-02-24 17:48:19 -0300
+Processing by InShoppingCartsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"igPawmeyPNrH+NE4m2HkqJAP30faEaGuRujt4A1Uwya0ikaP515wi/suQ9c4k7Ex5JDzNGeLmk918JFQGqZivw==", "id"=>"6"}
+  [1m[36mShoppingCart Load (0.4ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mInShoppingCart Load (0.3ms)[0m  [1m[34mSELECT  "in_shopping_carts".* FROM "in_shopping_carts" WHERE "in_shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "in_shopping_carts" WHERE "in_shopping_carts"."id" = $1[0m  [["id", 6]]
+  [1m[35m (10.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/carrito
+Completed 302 Found in 15ms (ActiveRecord: 11.4ms)
+
+
+Started GET "/carrito" for 127.0.0.1 at 2017-02-24 17:48:19 -0300
+Processing by ShoppingCartsController#show as HTML
+  [1m[36mShoppingCart Load (0.2ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering shopping_carts/show.haml within layouts/application
+  [1m[36mInShoppingCart Load (0.3ms)[0m  [1m[34mSELECT "in_shopping_carts".* FROM "in_shopping_carts" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 4]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT SUM("products"."pricing") FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 4]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered shopping_carts/show.haml within layouts/application (12.1ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 4]]
+  Rendered partials/_nav.haml (4.6ms)
+Completed 200 OK in 55ms (Views: 51.3ms | ActiveRecord: 2.2ms)
+
+
+Started DELETE "/in_shopping_carts/5" for 127.0.0.1 at 2017-02-24 17:48:20 -0300
+Processing by InShoppingCartsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"McK3qlQEfcZ+UFVJNLPnRuFUrD1NCwcmyRwkyQZFK6cPSyvn1Ogxl0KGx6aXQbLflcuATvCRPMf6BFh5EbeKPg==", "id"=>"5"}
+  [1m[36mShoppingCart Load (0.4ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mInShoppingCart Load (0.3ms)[0m  [1m[34mSELECT  "in_shopping_carts".* FROM "in_shopping_carts" WHERE "in_shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "in_shopping_carts" WHERE "in_shopping_carts"."id" = $1[0m  [["id", 5]]
+  [1m[35m (14.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/carrito
+Completed 302 Found in 18ms (ActiveRecord: 15.0ms)
+
+
+Started GET "/carrito" for 127.0.0.1 at 2017-02-24 17:48:20 -0300
+Processing by ShoppingCartsController#show as HTML
+  [1m[36mShoppingCart Load (0.2ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering shopping_carts/show.haml within layouts/application
+  [1m[36mInShoppingCart Load (0.4ms)[0m  [1m[34mSELECT "in_shopping_carts".* FROM "in_shopping_carts" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 4]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT SUM("products"."pricing") FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 4]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered shopping_carts/show.haml within layouts/application (11.4ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 4]]
+  Rendered partials/_nav.haml (5.4ms)
+Completed 200 OK in 54ms (Views: 49.4ms | ActiveRecord: 2.2ms)
+
+
+Started DELETE "/in_shopping_carts/4" for 127.0.0.1 at 2017-02-24 17:48:21 -0300
+Processing by InShoppingCartsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"MmLp/i1ZOiORoE3j5y2/vsuqcZlvz6bro8zs7ZneeSkM63WzrbV2cq123wxE3+onvzVd6tJVnQqQ1JBdjizYsA==", "id"=>"4"}
+  [1m[36mShoppingCart Load (0.3ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mInShoppingCart Load (0.3ms)[0m  [1m[34mSELECT  "in_shopping_carts".* FROM "in_shopping_carts" WHERE "in_shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "in_shopping_carts" WHERE "in_shopping_carts"."id" = $1[0m  [["id", 4]]
+  [1m[35m (9.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/carrito
+Completed 302 Found in 13ms (ActiveRecord: 10.2ms)
+
+
+Started GET "/carrito" for 127.0.0.1 at 2017-02-24 17:48:21 -0300
+Processing by ShoppingCartsController#show as HTML
+  [1m[36mShoppingCart Load (0.1ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering shopping_carts/show.haml within layouts/application
+  [1m[36mInShoppingCart Load (0.3ms)[0m  [1m[34mSELECT "in_shopping_carts".* FROM "in_shopping_carts" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 4]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT SUM("products"."pricing") FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 4]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered shopping_carts/show.haml within layouts/application (10.5ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 4]]
+  Rendered partials/_nav.haml (4.7ms)
+Completed 200 OK in 52ms (Views: 48.4ms | ActiveRecord: 2.0ms)
+
+
+Started DELETE "/in_shopping_carts/3" for 127.0.0.1 at 2017-02-24 17:48:22 -0300
+Processing by InShoppingCartsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"x4ORAtRtpMu6MxwLBwPHM5u1r3tZ6O7bAe9NeRVpm2r5Cg1PVIHomobljuSk8ZKq7yqDCORy1Toy9zHJAps68w==", "id"=>"3"}
+  [1m[36mShoppingCart Load (0.5ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mInShoppingCart Load (0.3ms)[0m  [1m[34mSELECT  "in_shopping_carts".* FROM "in_shopping_carts" WHERE "in_shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "in_shopping_carts" WHERE "in_shopping_carts"."id" = $1[0m  [["id", 3]]
+  [1m[35m (7.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/carrito
+Completed 302 Found in 11ms (ActiveRecord: 8.1ms)
+
+
+Started GET "/carrito" for 127.0.0.1 at 2017-02-24 17:48:22 -0300
+Processing by ShoppingCartsController#show as HTML
+  [1m[36mShoppingCart Load (0.2ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering shopping_carts/show.haml within layouts/application
+  [1m[36mInShoppingCart Load (0.2ms)[0m  [1m[34mSELECT "in_shopping_carts".* FROM "in_shopping_carts" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 4]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("products"."pricing") FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 4]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered shopping_carts/show.haml within layouts/application (7.3ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 4]]
+  Rendered partials/_nav.haml (4.6ms)
+Completed 200 OK in 47ms (Views: 44.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-24 17:48:27 -0300
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Processing by ProductsController#index as HTML
+  [1m[36mShoppingCart Load (0.3ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering products/index.html.haml within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY pricing[0m
+  Rendered products/index.html.haml within layouts/application (4.5ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 4]]
+  Rendered partials/_nav.haml (5.6ms)
+Completed 200 OK in 49ms (Views: 46.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-02-24 17:48:31 -0300
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mShoppingCart Load (0.3ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.haml within layouts/application
+  Rendered in_shopping_carts/_form.haml (0.8ms)
+  Rendered products/show.html.haml within layouts/application (3.8ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 4]]
+  Rendered partials/_nav.haml (4.2ms)
+Completed 200 OK in 42ms (Views: 36.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-02-24 17:50:03 -0300
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mShoppingCart Load (0.5ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.haml within layouts/application
+  Rendered in_shopping_carts/_form.haml (0.8ms)
+  Rendered products/show.html.haml within layouts/application (4.0ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 4]]
+  Rendered partials/_nav.haml (4.8ms)
+Completed 200 OK in 55ms (Views: 48.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-02-24 17:50:05 -0300
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mShoppingCart Load (0.6ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.haml within layouts/application
+  Rendered in_shopping_carts/_form.haml (2.0ms)
+  Rendered products/show.html.haml within layouts/application (9.4ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 4]]
+  Rendered partials/_nav.haml (6.8ms)
+Completed 200 OK in 86ms (Views: 75.9ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/add/1" for 127.0.0.1 at 2017-02-24 17:52:41 -0300
+Processing by InShoppingCartsController#create as HTML
+  Parameters: {"product_id"=>"1"}
+  [1m[36mShoppingCart Load (0.3ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "in_shopping_carts" ("product_id", "shopping_cart_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["product_id", 1], ["shopping_cart_id", 4], ["created_at", 2017-02-24 20:52:41 UTC], ["updated_at", 2017-02-24 20:52:41 UTC]]
+  [1m[35m (31.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/carrito
+Completed 302 Found in 36ms (ActiveRecord: 32.5ms)
+
+
+Started GET "/carrito" for 127.0.0.1 at 2017-02-24 17:52:41 -0300
+Processing by ShoppingCartsController#show as HTML
+  [1m[36mShoppingCart Load (0.2ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering shopping_carts/show.haml within layouts/application
+  [1m[36mInShoppingCart Load (0.3ms)[0m  [1m[34mSELECT "in_shopping_carts".* FROM "in_shopping_carts" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 4]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("products"."pricing") FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 4]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered shopping_carts/show.haml within layouts/application (6.9ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 4]]
+  Rendered partials/_nav.haml (4.1ms)
+Completed 200 OK in 42ms (Views: 39.5ms | ActiveRecord: 1.9ms)
+
+
+Started DELETE "/auto/sign_out" for 127.0.0.1 at 2017-02-24 17:55:09 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"bcGFaNdGkJodk1v7XgoLF587c0kG1yTsfD24V0l1dDhTSBklV6rcyyFFyRT9+F6O66RfOrtNHw1PJcTnXofVoQ=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mShoppingCart Load (0.2ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-24 17:55:09 -0300
+Processing by WelcomeController#unregistered as HTML
+  [1m[36mShoppingCart Load (0.3ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering welcome/unregistered.haml within layouts/landing
+  Rendered welcome/unregistered.haml within layouts/landing (4.3ms)
+Completed 200 OK in 32ms (Views: 31.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/auto/sign_in" for 127.0.0.1 at 2017-02-24 17:55:11 -0300
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mShoppingCart Load (0.8ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.4ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 4]]
+  Rendered partials/_nav.haml (4.3ms)
+Completed 200 OK in 45ms (Views: 42.8ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/auto/sign_in" for 127.0.0.1 at 2017-02-24 17:55:16 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"O+EOOH2DhdnTWfvBH7lMxYiX02aLHRjYhv4QSrtE7NsOPJb23jH5jmAz+Jas28cJ+u561qM3FXn/LvHdoVQB5w==", "user"=>{"email"=>"mgomez@icci.cl", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  [1m[36mShoppingCart Load (0.3ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "mgomez@icci.cl"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["current_sign_in_at", 2017-02-24 20:55:16 UTC], ["last_sign_in_at", 2017-02-24 20:34:54 UTC], ["sign_in_count", 5], ["updated_at", 2017-02-24 20:55:16 UTC], ["id", 1]]
+  [1m[35m (16.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 147ms (ActiveRecord: 18.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-24 17:55:16 -0300
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by ProductsController#index as HTML
+  [1m[36mShoppingCart Load (0.2ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering products/index.html.haml within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY pricing[0m
+  Rendered products/index.html.haml within layouts/application (3.5ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 4]]
+  Rendered partials/_nav.haml (4.9ms)
+Completed 200 OK in 38ms (Views: 36.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-02-24 17:55:28 -0300
+Processing by ProductsController#new as HTML
+  [1m[36mShoppingCart Load (0.3ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/new.html.haml within layouts/application
+  Rendered products/_form.html.haml (6.6ms)
+  Rendered products/new.html.haml within layouts/application (8.3ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 4]]
+  Rendered partials/_nav.haml (4.4ms)
+Completed 200 OK in 49ms (Views: 45.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-02-24 17:55:30 -0300
+Processing by ProductsController#index as HTML
+  [1m[36mShoppingCart Load (0.4ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering products/index.html.haml within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY pricing[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/index.html.haml within layouts/application (4.4ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 4]]
+  Rendered partials/_nav.haml (4.3ms)
+Completed 200 OK in 40ms (Views: 37.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/products/1/edit" for 127.0.0.1 at 2017-02-24 17:55:32 -0300
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mShoppingCart Load (0.3ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/edit.html.haml within layouts/application
+  Rendered products/_form.html.haml (2.7ms)
+  Rendered products/edit.html.haml within layouts/application (4.1ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 4]]
+  Rendered partials/_nav.haml (4.2ms)
+Completed 200 OK in 54ms (Views: 38.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-02-24 17:55:34 -0300
+Processing by ProductsController#index as HTML
+  [1m[36mShoppingCart Load (0.3ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering products/index.html.haml within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY pricing[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/index.html.haml within layouts/application (5.8ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 4]]
+  Rendered partials/_nav.haml (4.6ms)
+Completed 200 OK in 44ms (Views: 41.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-02-24 17:55:36 -0300
+Processing by ProductsController#new as HTML
+  [1m[36mShoppingCart Load (0.4ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/new.html.haml within layouts/application
+  Rendered products/_form.html.haml (3.3ms)
+  Rendered products/new.html.haml within layouts/application (4.9ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 4]]
+  Rendered partials/_nav.haml (5.2ms)
+Completed 200 OK in 49ms (Views: 44.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/ok" for 127.0.0.1 at 2017-02-24 18:49:29 -0300
+Processing by WelcomeController#payment_succed as HTML
+  [1m[36mShoppingCart Load (0.3ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering welcome/payment_succed.haml within layouts/application
+  [1m[36mInShoppingCart Load (0.3ms)[0m  [1m[34mSELECT "in_shopping_carts".* FROM "in_shopping_carts" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 4]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered welcome/payment_succed.haml within layouts/application (5.7ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 4]]
+  Rendered partials/_nav.haml (4.4ms)
+Completed 200 OK in 50ms (Views: 47.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/ok" for 127.0.0.1 at 2017-02-24 19:18:21 -0300
+Processing by WelcomeController#payment_succed as HTML
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "shopping_carts" ("ip", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["ip", "127.0.0.1"], ["created_at", 2017-02-24 22:18:21 UTC], ["updated_at", 2017-02-24 22:18:21 UTC]]
+  [1m[35m (29.6ms)[0m  [1m[35mCOMMIT[0m
+  Rendering welcome/payment_succed.haml within layouts/application
+  [1m[36mInShoppingCart Load (0.3ms)[0m  [1m[34mSELECT "in_shopping_carts".* FROM "in_shopping_carts" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 5]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered welcome/payment_succed.haml within layouts/application (3.7ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 5]]
+  Rendered partials/_nav.haml (4.4ms)
+Completed 200 OK in 68ms (Views: 35.4ms | ActiveRecord: 31.0ms)
+
+
+Started GET "/ok" for 127.0.0.1 at 2017-02-24 19:19:11 -0300
+Processing by WelcomeController#payment_succed as HTML
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "shopping_carts" ("ip", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["ip", "127.0.0.1"], ["created_at", 2017-02-24 22:19:11 UTC], ["updated_at", 2017-02-24 22:19:11 UTC]]
+  [1m[35m (29.0ms)[0m  [1m[35mCOMMIT[0m
+  Rendering welcome/payment_succed.haml within layouts/application
+  [1m[36mInShoppingCart Load (0.2ms)[0m  [1m[34mSELECT "in_shopping_carts".* FROM "in_shopping_carts" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 6]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered welcome/payment_succed.haml within layouts/application (3.9ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 6]]
+  Rendered partials/_nav.haml (4.3ms)
+Completed 200 OK in 70ms (Views: 36.7ms | ActiveRecord: 30.5ms)
+
+
+Started GET "/ok" for 127.0.0.1 at 2017-02-24 19:20:01 -0300
+Processing by WelcomeController#payment_succed as HTML
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "shopping_carts" ("ip", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["ip", "127.0.0.1"], ["created_at", 2017-02-24 22:20:01 UTC], ["updated_at", 2017-02-24 22:20:01 UTC]]
+  [1m[35m (25.5ms)[0m  [1m[35mCOMMIT[0m
+  Rendering welcome/payment_succed.haml within layouts/application
+  [1m[36mInShoppingCart Load (0.4ms)[0m  [1m[34mSELECT "in_shopping_carts".* FROM "in_shopping_carts" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 7]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered welcome/payment_succed.haml within layouts/application (4.1ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 7]]
+  Rendered partials/_nav.haml (4.5ms)
+Completed 200 OK in 66ms (Views: 36.6ms | ActiveRecord: 27.0ms)
+
+
+Started GET "/ok" for 127.0.0.1 at 2017-02-24 19:39:12 -0300
+Processing by WelcomeController#payment_succed as HTML
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "shopping_carts" ("ip", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["ip", "127.0.0.1"], ["created_at", 2017-02-24 22:39:12 UTC], ["updated_at", 2017-02-24 22:39:12 UTC]]
+  [1m[35m (17.0ms)[0m  [1m[35mCOMMIT[0m
+  Rendering welcome/payment_succed.haml within layouts/application
+  [1m[36mInShoppingCart Load (0.4ms)[0m  [1m[34mSELECT "in_shopping_carts".* FROM "in_shopping_carts" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 8]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered welcome/payment_succed.haml within layouts/application (6.7ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 8]]
+  Rendered partials/_nav.haml (5.8ms)
+Completed 200 OK in 78ms (Views: 55.8ms | ActiveRecord: 19.1ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-02-24 19:51:57 -0300
+Processing by ProductsController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "shopping_carts" ("ip", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["ip", "127.0.0.1"], ["created_at", 2017-02-24 22:51:57 UTC], ["updated_at", 2017-02-24 22:51:57 UTC]]
+  [1m[35m (12.6ms)[0m  [1m[35mCOMMIT[0m
+  Rendering products/index.html.haml within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY pricing[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/index.html.haml within layouts/application (16.0ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 9]]
+  Rendered partials/_nav.haml (8.1ms)
+Completed 200 OK in 78ms (Views: 51.8ms | ActiveRecord: 14.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-24 20:08:25 -0300
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by ProductsController#index as HTML
+  [1m[36mShoppingCart Load (0.2ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering products/index.html.haml within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY pricing[0m
+  Rendered products/index.html.haml within layouts/application (4.5ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 9]]
+  Rendered partials/_nav.haml (4.2ms)
+Completed 200 OK in 39ms (Views: 36.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-24 20:08:27 -0300
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by ProductsController#index as HTML
+  [1m[36mShoppingCart Load (0.2ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering products/index.html.haml within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY pricing[0m
+  Rendered products/index.html.haml within layouts/application (4.5ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 9]]
+  Rendered partials/_nav.haml (4.1ms)
+Completed 200 OK in 47ms (Views: 45.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-24 20:08:27 -0300
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by ProductsController#index as HTML
+  [1m[36mShoppingCart Load (0.3ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering products/index.html.haml within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY pricing[0m
+  Rendered products/index.html.haml within layouts/application (4.2ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 9]]
+  Rendered partials/_nav.haml (4.1ms)
+Completed 200 OK in 38ms (Views: 36.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-02-24 20:08:28 -0300
+Processing by ProductsController#index as HTML
+  [1m[36mShoppingCart Load (0.5ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering products/index.html.haml within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY pricing[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/index.html.haml within layouts/application (6.0ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 9]]
+  Rendered partials/_nav.haml (4.5ms)
+Completed 200 OK in 45ms (Views: 41.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-02-24 20:08:29 -0300
+Processing by ProductsController#index as HTML
+  [1m[36mShoppingCart Load (0.4ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering products/index.html.haml within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY pricing[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/index.html.haml within layouts/application (6.4ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 9]]
+  Rendered partials/_nav.haml (4.2ms)
+Completed 200 OK in 43ms (Views: 39.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-02-24 20:08:30 -0300
+Processing by ProductsController#index as HTML
+  [1m[36mShoppingCart Load (0.4ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering products/index.html.haml within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY pricing[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/index.html.haml within layouts/application (5.3ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 9]]
+  Rendered partials/_nav.haml (4.4ms)
+Completed 200 OK in 41ms (Views: 38.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-02-24 20:08:30 -0300
+Processing by ProductsController#index as HTML
+  [1m[36mShoppingCart Load (0.4ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering products/index.html.haml within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY pricing[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/index.html.haml within layouts/application (7.6ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 9]]
+  Rendered partials/_nav.haml (4.7ms)
+Completed 200 OK in 46ms (Views: 42.4ms | ActiveRecord: 1.7ms)
+
+
+Started DELETE "/auto/sign_out" for 127.0.0.1 at 2017-02-24 20:08:32 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"CjzHKR8129Z+duXqlcfKwjJjftN1pS4R4BVpz3JdD9EA2s3NrzSVYYeDUTZ143e2G6UcSdxIzOQB2O5LzzPCcA=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mShoppingCart Load (0.2ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-24 20:08:32 -0300
+Processing by WelcomeController#unregistered as HTML
+  [1m[36mShoppingCart Load (0.2ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering welcome/unregistered.haml within layouts/landing
+  Rendered welcome/unregistered.haml within layouts/landing (3.6ms)
+Completed 200 OK in 32ms (Views: 31.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-02-24 20:08:36 -0300
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mShoppingCart Load (0.4ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.haml within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered in_shopping_carts/_form.haml (0.9ms)
+  Rendered products/show.html.haml within layouts/application (15.8ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 9]]
+  Rendered partials/_nav.haml (4.0ms)
+Completed 200 OK in 50ms (Views: 46.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/auto/sign_in" for 127.0.0.1 at 2017-02-24 20:08:41 -0300
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mShoppingCart Load (0.4ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.0ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 9]]
+  Rendered partials/_nav.haml (4.4ms)
+Completed 200 OK in 41ms (Views: 39.0ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/auto/sign_in" for 127.0.0.1 at 2017-02-24 20:08:44 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eeKDMsiG4+jmSsHAMqFxMcHu8083EckVE33qE6vZ9YLEvn+mqeF/YU8BzV7ZDHCIhS/qDjp0TphG8XRZfhiJ8A==", "user"=>{"email"=>"mrgozu@hotmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  [1m[36mShoppingCart Load (0.2ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "mrgozu@hotmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["current_sign_in_at", 2017-02-24 23:08:44 UTC], ["last_sign_in_at", 2017-02-24 20:42:51 UTC], ["sign_in_count", 3], ["updated_at", 2017-02-24 23:08:44 UTC], ["id", 2]]
+  [1m[35m (11.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 146ms (ActiveRecord: 12.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-24 20:08:44 -0300
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Processing by ProductsController#index as HTML
+  [1m[36mShoppingCart Load (0.1ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering products/index.html.haml within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY pricing[0m
+  Rendered products/index.html.haml within layouts/application (3.9ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 9]]
+  Rendered partials/_nav.haml (6.3ms)
+Completed 200 OK in 44ms (Views: 42.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-02-24 20:08:47 -0300
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mShoppingCart Load (0.3ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.haml within layouts/application
+  Rendered in_shopping_carts/_form.haml (0.8ms)
+  Rendered products/show.html.haml within layouts/application (4.0ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 9]]
+  Rendered partials/_nav.haml (4.3ms)
+Completed 200 OK in 42ms (Views: 36.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/add/1" for 127.0.0.1 at 2017-02-24 20:08:50 -0300
+Processing by InShoppingCartsController#create as HTML
+  Parameters: {"product_id"=>"1"}
+  [1m[36mShoppingCart Load (0.3ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "in_shopping_carts" ("product_id", "shopping_cart_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["product_id", 1], ["shopping_cart_id", 9], ["created_at", 2017-02-24 23:08:50 UTC], ["updated_at", 2017-02-24 23:08:50 UTC]]
+  [1m[35m (13.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/carrito
+Completed 302 Found in 22ms (ActiveRecord: 14.7ms)
+
+
+Started GET "/carrito" for 127.0.0.1 at 2017-02-24 20:08:50 -0300
+Processing by ShoppingCartsController#show as HTML
+  [1m[36mShoppingCart Load (0.3ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering shopping_carts/show.haml within layouts/application
+  [1m[36mInShoppingCart Load (0.3ms)[0m  [1m[34mSELECT "in_shopping_carts".* FROM "in_shopping_carts" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 9]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("products"."pricing") FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 9]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered shopping_carts/show.haml within layouts/application (7.4ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 9]]
+  Rendered partials/_nav.haml (5.8ms)
+Completed 200 OK in 44ms (Views: 41.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/ok" for 127.0.0.1 at 2017-02-24 20:08:51 -0300
+Processing by WelcomeController#payment_succed as HTML
+  [1m[36mShoppingCart Load (0.3ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering welcome/payment_succed.haml within layouts/application
+  [1m[36mInShoppingCart Load (0.4ms)[0m  [1m[34mSELECT "in_shopping_carts".* FROM "in_shopping_carts" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 9]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered welcome/payment_succed.haml within layouts/application (7.0ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" INNER JOIN "in_shopping_carts" ON "products"."id" = "in_shopping_carts"."product_id" WHERE "in_shopping_carts"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 9]]
+  Rendered partials/_nav.haml (5.3ms)
+Completed 200 OK in 46ms (Views: 43.1ms | ActiveRecord: 1.7ms)
+
+
