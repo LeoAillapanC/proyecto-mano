@@ -3,10 +3,10 @@ Rails.application.routes.draw do
 
 
 
-  resources :products
-  resources :in_shopping_carts, only: [ :create, :destroy, :new, :show]
+  	resources :products
+  	resources :in_shopping_carts, only: [ :create, :destroy, :new, :show]
 
-  devise_for :users, path: 'auto', path_names: { sing_in: 'login', sing_out:'logout',password: 'secret',confirmation:'verification', unlock:'unblock',registration:'register',sing_up:'cmon_let_me_in'}
+  	devise_for :users, path: 'auto', path_names: { sing_in: 'login', sing_out:'logout',password: 'secret',confirmation:'verification', unlock:'unblock',registration:'register',sing_up:'cmon_let_me_in'}
 	resources :articles, only: [:create, :show]
 
 
@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 	get "add/:product_id", as: :add_to_cart,to: "in_shopping_carts#create"
 	get "/ordenes", to: "ordenes#index"
 =begin
-			RESOURCE HACE TODAS ESTAS FUNCIONES	
+		RESOURCE HACE TODAS ESTAS FUNCIONES	
 		get "/articles" index
 		post "/articles"	create
 		delete "/articles"  delete
@@ -26,7 +26,7 @@ Rails.application.routes.draw do
 		put "/articles/:id" 	uptade
 =end
 
-  	post 'welcome/index'
+  	get 'welcome/index'
   	get "special", to:"welcome#index"
   	get "/ok", to: "welcome#payment_succed"
 

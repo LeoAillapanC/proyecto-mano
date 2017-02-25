@@ -5,18 +5,16 @@
 				=link_to products_path, class:"right-space white-text" do
 					%i.mdi-action-trending-up 
 					Ver productos
-				-if user_signed_in?
-					=link_to root_path, class:"right-space white-text" do
-						%i.mdi-action-account-box
-						Mi Tienda
-					
-					=link_to ordenes_path, class:"right-space white-text" do
-						%i.mdi-action-alarm 
-						Ordenes
-					=link_to "Cerrar sesion", destroy_user_session_path,method: :delete,class:"right-space white-text"
+				
 				-if  !user_signed_in?
 					=link_to new_user_session_path,class:"btn btn-info" do
 						Iniciar Sesion
+				-if current_user.try(:admin? )
+					=link_to "/welcome/index", class:"right-space white-text" do
+						%i.mdi-action-account-box
+						Usuarios
+				-if user_signed_in?
+					=link_to "Cerrar sesion", destroy_user_session_path,method: :delete,class:"right-space white-text"
 						
 
 			%li.col-md-3.inline-block.text-center.tall-padding

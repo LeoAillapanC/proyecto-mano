@@ -7,7 +7,7 @@
 	%div.text-center
 		.col-md-9.no-float.center-block 
 			%h1.white-text.Kostic.big.bold
-				Por favor Ingresa sesion para poder comprar
+				Por favor Inicia sesion para poder comprar
 			.Kostic.big.bold
 				=link_to new_user_session_path,class:"btn btn-primary" do
 					Iniciar Sesion
@@ -15,6 +15,11 @@
 			.Kostic.big.bold
 				=link_to new_user_registration_path,class:"btn btn-danger" do
 					Crear Cuenta
+			%h1.white-text.Kostic.big.bold
+				Ir a Tienda
+			.Kostic.big.bold
+				=link_to products_path, class:"btn btn-success" do
+					Tienda
 
 
 
@@ -28,18 +33,6 @@
 
 		.col-md-12.inline-block	
 			=image_tag "mono.png", width:"620"
-
-
-
-.top-space.big-padding.bottom-space
-	.col-md-10.no-float.left-space
-		%h1.grey-text.Kostic.big.bold
-			Contactanos!
-	.col-md-11.col-xs-12.center-block.no-float
-		=form_tag(create_email_path,method: :post,remote:true, id: "emails-form") do
-			=email_field_tag "email", nil, class:"col-xs-12 inline-block text-center landing-form",placeholder:"Escribe aqui tu mail" 
-		#email-info.red.white-text.large-padding
-
 
 
 

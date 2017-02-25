@@ -1,7 +1,26 @@
-.col-xs-12.col-md-11.center-block.no-float
-	.card.large-padding
-		.top-space
-			.col-md-3.col-xs-12.inline-block.no-padding
-				=render current_user.products
-			.col-md-9.col-xs-12.inline-block
-				=render "payments/index"
+-if current_user.try(:admin? )
+	%article.big-padding
+		%h1.text-center 
+			Lista de Usuarios
+		%section.inline-block.col-md-12.row
+			%table.table.table-striped.table-hover.col-md-8.no-float
+				%thead
+					%tr
+						%th Id
+						%th Email
+						%th Ultima Conexion
+						%th Creado en
+						%th 
+
+				%tbody
+					- @users.each do |user|
+						%tr
+							%td= user.id
+							%td= user.email
+							%td= user.last_sign_in_at
+							%td= user.created_at
+							%td
+-else
+	%h3.demencial
+		Error kappa 8
+	=image_tag "ranapepe.jpg", width:"420"
