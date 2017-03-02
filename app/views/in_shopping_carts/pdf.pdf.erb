@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<%= wicked_pdf_stylesheet_link_tag 'pdf' %>
+	<meta charset="utf-8">
+</head>
+<body>
+	<table>
+		<thead>
+			<tr>
+				<th style="width: 300px;">Nombre</th>
+				<th style="width: 200px;">Precio</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @shopping_cart.in_shopping_carts.each do |i_sh| %>
+				<% product =i_sh.product %>
+				<tr>
+					<td><%= product.name %></td>
+					<td><%= product.pricing %></td>
+			</tr>
+			<%end%>
+		</tbody>
+
+	</table>
+</body>
+</html>

@@ -1,24 +1,32 @@
-.col-md-10.center-block.no-float
-	%article.card.large-padding
-		%h1 su peticion ha sido mandada
-		%p Lo contactaremos a la brevedad
-		%section.big-top-space
-			%h2 Resumen de tu pedido
-			%table.table.table-striped.table-hover.medium#table_shopping_cart
-				%thead
-					%td Producto
-					%td Costo
-				%tbody
-					-@shopping_cart.in_shopping_carts.each do |i_sh|
-						-product =i_sh.product
-						%tr{id: "#{product.id}"}
-							%td= product.name
-							%td= product.pricing
-		-if user_signed_in?
-			%p.medium 
-				Current User
-				%p= current_user
-				%p= @shopping_cart.status
-				%p= @shopping_cart.ip
-				%p= @shopping_cart.user_id
-
+-if user_signed_in?
+	.col-md-10.center-block.no-float
+		%article.card.large-padding
+			%h1 su peticion ha sido mandada
+			%p Lo contactaremos a la brevedad
+			%section.big-top-space
+				%h2 Resumen de tu pedido
+				%table.table.table-striped.table-hover.medium#table_shopping_cart
+					%thead
+						%td Producto
+						%td Costo
+					%tbody
+						-@shopping_cart.in_shopping_carts.each do |i_sh|
+							-product =i_sh.product
+							%tr{id: "#{product.id}"}
+								%th= product.name
+								%th= product.pricing
+			-if user_signed_in?
+				%p.grey-text.medium 
+					Usuario:
+					= current_user.email
+				%h3.blue-text.big 
+					Informacion de contacto:
+				%p Telefono:  22 563 7585
+				%p Direccion: Cardenal Caro #4331, PAC
+				%p Email:     brendacuellara@hotmail.com
+				%p Cuenta corriente: xxxxx-xxxxx-xxxx Scotiabank
+-else
+	%h3.demencial
+		Error kappa 8
+	.pull-left
+		=image_tag "ranapepe.jpg", width:"420"
