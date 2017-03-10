@@ -9,6 +9,9 @@
         -if current_user.try(:admin? )
           = link_to new_product_path, class:"btn btn-success" do
             Nuevo Producto
+      
+      %a{:href => "/products.pdf",class:"btn btn-primary"}
+        generar catalogo pdf
 
     %section.pull-left.nav.col-md-3
       %ul.nav

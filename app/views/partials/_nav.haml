@@ -13,6 +13,13 @@
 					=link_to "/welcome/index", class:"right-space white-text" do
 						%i.mdi-action-account-box
 						Usuarios
+
+				-if user_signed_in?
+					=link_to "perfil", edit_user_registration_path,class:"right-space white-text"
+				
+
+
+
 				-if user_signed_in?
 					=link_to "Cerrar sesion", destroy_user_session_path,method: :delete,class:"right-space white-text"
 						

@@ -2,6 +2,14 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 	before_action :set_shopping_cart
 
+	before_action :configure_permitted_parameters, if: :devise_controller?
+
+	protected
+	
+	def configure_permitted_parameters
+		devise_parameter_sanitizer.permit(:sing_up){|u| u.permit(:telefono, :nombre)}
+		devise_parameter_sanitizer.permit(:account_update){|u| u.permit(:telefono, :nombre)}
+	end
 
 	private
 		def set_shopping_cart
@@ -21,4 +29,6 @@ class ApplicationController < ActionController::Base
 		
 
 		end
+
+
 end
