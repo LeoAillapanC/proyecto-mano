@@ -16,8 +16,8 @@
 								%th= product.name
 								%th= product.pricing
 			-if user_signed_in?
-				%p.grey-text.medium 
-					Usuario:
+				%p.green-text.medium 
+					Le hemos enviado un correo a :
 					= current_user.email
 				%h3.blue-text.big 
 					Informacion de contacto:
