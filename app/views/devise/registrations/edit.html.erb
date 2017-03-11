@@ -1,5 +1,5 @@
 <% if user_signed_in? %> 
-    <div class="col-md-6 col-xs-10 col-sm-8 col-lg-5 center-block text-center no-float ">
+    <div class="col-md-6 col-xs-10 col-sm-8 col-lg-5 center-block no-float ">
     
     <div class="card big-padding">
 
@@ -10,7 +10,7 @@
         <br />
         <div class="field">
           <%= f.label :Email %><br />
-          <%= f.email_field :email, autofocus: true %>
+          <%= f.email_field :email, class:"form-control" , autofocus: true %>
         </div>
 
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -18,8 +18,8 @@
         <% end %>
 
         <div class="field">
-          <%= f.label :Contraseña %> <br />
-          <%= f.password_field :password, autocomplete: "off" %>
+          <%= f.label :Nueva_contraseña %> <br />
+          <%= f.password_field :password, class:"form-control" , autocomplete: "off" %>
           <% if @minimum_password_length %>
             <br />
             <em><%= @minimum_password_length %> caracteres minimos</em>
@@ -28,20 +28,20 @@
 
         <div class="field">
           <%= f.label :Confirmar_contraseña %><br />
-          <%= f.password_field :password_confirmation, autocomplete: "off" %>
+          <%= f.password_field :password_confirmation, class:"form-control" , autocomplete: "off" %>
         </div>
 
         <div class="field">
           <%= f.label :Contraseña_actual %><br />
-          <%= f.password_field :current_password, autocomplete: "off" %>
+          <%= f.password_field :current_password, class:"form-control" , autocomplete: "off" %>
         </div>
         <div class="field">
           <%= f.label :Nombre %><br />
-          <%= f.text_field :nombre, autocomplete: "on" %>
+          <%= f.text_field :nombre, class:"form-control" , autocomplete: "on" %>
         </div>
         <div class="field">
           <%= f.label :telefono %><br />
-          <%= f.text_field :telefono, autocomplete: "on" %>
+          <%= f.number_field :telefono, class:"form-control" , autocomplete: "on" %>
         </div>
         
 
@@ -51,7 +51,10 @@
         </div>
       <% end %>
       <br />
-      <%= button_to "Cerrar mi Cuenta", registration_path(resource_name),class:"btn btn-danger", data: { confirm: "Estas Seguro?" }, method: :delete %></p>
+      <% if !current_user.try(:admin? ) %>
+        <%= button_to "Cerrar mi Cuenta", registration_path(resource_name),class:"btn btn-danger", data: { confirm: "Estas Seguro?" }, method: :delete %></p>
+      <% end %>
+      
     </div>
   </div>
 <%end%>
