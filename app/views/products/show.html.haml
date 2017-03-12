@@ -25,10 +25,7 @@
     .col-xs-5.col-md-6.text-left
       %h3.green-text.bold.normal.inline-block Descripcion del Producto
       %p= @product.description
-      .inline-block.blue-text.bold.normal
-        Cantidad
-        %input{:cantidad => "cantidad", :type => "number"}
-        =render "in_shopping_carts/form", product: @product, :data => { :confirm => 'Estas Seguro?' }
+      =render "in_shopping_carts/form", product: @product, :data => { :confirm => 'Estas Seguro?' }
       -if current_user.try(:admin? )
         = link_to edit_product_path(@product), class:"btn btn-info" do
           Editar Producto      
