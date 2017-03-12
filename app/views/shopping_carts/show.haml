@@ -1,6 +1,10 @@
 .card.large-padding
-	Carrito de compras Numero :
-	=@shopping_cart.id
+	.grey-text.bold
+		Carrito de compras Numero :
+		=@shopping_cart.id
+	.col-md-11.no-float.text-center
+		=link_to products_path,class:"btn btn-warning" do
+			Elige tus productos
 	%table.table.table-striped.table-hover.medium#table_shopping_cart
 		%thead
 			%td Producto
@@ -12,7 +16,8 @@
 				%tr{id: "#{product.id}"}
 					%td= product.name
 					%td= product.pricing
-					%td= link_to "Eliminar",i_sh,method: :delete
+					%td.bold= link_to "Eliminar",i_sh,method: :delete
+	
 	.top-space.large-padding.text-right.col-md-9.right-space#payment_form
 		%p.medium
 		
