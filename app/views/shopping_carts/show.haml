@@ -24,7 +24,9 @@
 		%strong.bold.big
 			Total: $ 
 			=@shopping_cart.total
-		-if user_signed_in?
+		- x=@shopping_cart.total
+
+		-if user_signed_in? and x>0
 			=link_to "/ok",class:"btn btn-success" do
 				Cotizar
 		.col-md-11.no-float
