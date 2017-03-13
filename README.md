@@ -6,7 +6,7 @@ Version de PostgreSQL --- psql (PostgreSQL) 9.5.5
 
 Instrucciones para crear UsuarioAdmin
 1) Registrar Usuario en la Pagina.
-  Correo: local.cbc@gmail
+  Correo: local.cbc@gmail.com
   Contraseña: 123456
 
 2)Darle Admin a travez de la consola

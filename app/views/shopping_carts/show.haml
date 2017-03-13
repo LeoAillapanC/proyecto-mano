@@ -19,9 +19,9 @@
 					%td.bold= link_to "Eliminar",i_sh,method: :delete
 	
 	.top-space.large-padding.text-right.col-md-9.right-space#payment_form
-		%p.medium
+		%p
 		
-		%strong
+		%strong.bold.big
 			Total: $ 
 			=@shopping_cart.total
 		-if user_signed_in?

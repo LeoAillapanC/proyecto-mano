@@ -2,19 +2,15 @@
 	
 	.col-md-10.center-block.no-float
 		%article.card.large-padding
-			.col-md-12
+			.col-md-12.bold
 				Carrito de compras Numero :
 				=@shopping_cart.id
-				%h1 Como comprar
-				
-				.col-md-12
-					=link_to carrito_path,class:"btn btn-success" do
-						Paso 2
-					Ve el costo total de tu pedido en el carro de compras
-				.col-md-12.bigger.green-text
-					
-					Paso 3 -->
-					Contactamos
+				%p
+				%p
+				Su mail : 
+				= current_user.email
+			%br
+			%br
 			%section.big-top-space.text-center
 				%h2 Resumen de tu pedido
 				%table.table.table-striped.table-hover.medium#table_shopping_cart
@@ -29,14 +25,17 @@
 								%th= product.pricing
 			-if user_signed_in?
 				%p.green-text.medium 
-					Le hemos enviado un correo a :
-					= current_user.email
+					Envienos un correo con sus requerimientos y la forma de entrega a
+				.green-text.medium.bold
+					local.cbc@gmail.com
+				.green-text.medium
+					nosotros te responderemos a la brevedad.
+					
 				%h3.blue-text.big 
 					Informacion de contacto:
-				%p Telefono:  22 563 7585
-				%p Direccion: Cardenal Caro #4331, PAC
-				%p Email:     brendacuellara@hotmail.com
-				%p Cuenta corriente: xxxxx-xxxxx-xxxx Scotiabank
+				%p.bold Telefono:  22 563 7585
+				%p.bold Direccion: Cardenal Caro #4331, PAC
+				%p.bold Email:     local.cbc@gmail.com
 -else
 	%h3.demencial
 		Error kappa 8
