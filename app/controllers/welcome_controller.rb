@@ -4,7 +4,7 @@ class WelcomeController < ApplicationController
   end
 
   def payment_succed
-  	"cookies[:shopping_cart_id] = nil" 
+  	cookies[:shopping_cart_id] = nil 
   end
   def index
   	@users = User.all.order("id")
