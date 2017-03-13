@@ -21,9 +21,6 @@
 					=link_to edit_user_registration_path,class:"right-space white-text" do
 						%i.mdi-action-account-circle
 						Perfil
-				
-
-
 
 				-if user_signed_in?
 					=link_to "Cerrar sesion", destroy_user_session_path,method: :delete,class:"right-space white-text"

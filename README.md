@@ -16,3 +16,6 @@ Instrucciones para crear UsuarioAdmin
 -z (para verificar)
 -z.save
 -exit
+
+Instrucciones para agregar productos desde seeds.rb
+- rake db:seed

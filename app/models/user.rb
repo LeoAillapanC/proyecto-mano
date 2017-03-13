@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
     
   	has_many :products
+    validates_presence_of :nombre
 	def orders
 		MyPayment.joins(:products)
 			.joins("LEFT JOIN users ON products.user_id = users.id")
