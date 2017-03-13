@@ -1,43 +1,60 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<% if user_signed_in? %> 
+    <div class="col-md-6 col-xs-10 col-sm-8 col-lg-5 center-block no-float ">
+    
+    <div class="card big-padding">
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
+      <h2>Editar perfil </h2>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <%= devise_error_messages! %>
+        <br />
+        <div class="field">
+          <%= f.label :Email %><br />
+          <%= f.email_field :email, class:"form-control" , autofocus: true %>
+        </div>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+        <% end %>
 
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-    <% if @minimum_password_length %>
+        <div class="field">
+          <%= f.label :Nueva_contraseña %> <br />
+          <%= f.password_field :password, class:"form-control" , autocomplete: "off" %>
+          <% if @minimum_password_length %>
+            <br />
+            <em><%= @minimum_password_length %> caracteres minimos</em>
+          <% end %>
+        </div>
+
+        <div class="field">
+          <%= f.label :Confirmar_contraseña %><br />
+          <%= f.password_field :password_confirmation, class:"form-control" , autocomplete: "off" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :Contraseña_actual %><br />
+          <%= f.password_field :current_password, class:"form-control" , autocomplete: "off" %>
+        </div>
+        <div class="field">
+          <%= f.label :Nombre %><br />
+          <%= f.text_field :nombre, class:"form-control" , autocomplete: "on" %>
+        </div>
+        <div class="field">
+          <%= f.label :telefono %><br />
+          <%= f.number_field :telefono, class:"form-control" , autocomplete: "on" %>
+        </div>
+        
+
+        <div class="actions">
+        <br />
+          <%= f.submit "Actualizar", class:"btn btn-success" %>
+        </div>
+      <% end %>
       <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
+      <% if !current_user.try(:admin? ) %>
+        <%= button_to "Cerrar mi Cuenta", registration_path(resource_name),class:"btn btn-danger", data: { confirm: "Estas Seguro?" }, method: :delete %></p>
+      <% end %>
+      
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Actualizar" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancelar mi Cuenta", registration_path(resource_name), data: { confirm: "Estas Seguro?" }, method: :delete %></p>
-
-<%= link_to "Atras", :back %>
+<%end%>

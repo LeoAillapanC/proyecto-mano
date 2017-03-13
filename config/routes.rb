@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 	get "/carrito", to: "shopping_carts#show"
 	get "add/:product_id", as: :add_to_cart,to: "in_shopping_carts#create"
 	get "/ordenes", to: "ordenes#index"
+	get "/nosotros", to: "welcome#nosotros"
 =begin
 		RESOURCE HACE TODAS ESTAS FUNCIONES	
 		get "/articles" index

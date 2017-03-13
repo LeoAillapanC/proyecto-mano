@@ -7,19 +7,23 @@
 				%thead
 					%tr
 						%th Id
+						%th Nombre
+						%th Telefono
 						%th Email
 						%th Ultima Conexion
 						%th Creado en
-						%th 
+						%th admin
 
 				%tbody
 					- @users.each do |user|
 						%tr
 							%td= user.id
+							%td= user.nombre
+							%td= user.telefono
 							%td= user.email
 							%td= user.last_sign_in_at
 							%td= user.created_at
-							%td
+							%td=user.admin
 -else
 	%h3.demencial
 		Error kappa 8

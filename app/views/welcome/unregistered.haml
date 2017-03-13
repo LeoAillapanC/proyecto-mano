@@ -28,8 +28,13 @@
 	%div.text-center
 		.col-md-12.no-padding.inline-block
 			%h1.white-text.Kostic.bigger
-				%strong 
-					Aqui encontraras todo tipo de repuestos para autos
+				%strong
+					Ingresa a la sección Nosotros para saber como comprar
+				.Kostic.big.bold
+				=link_to nosotros_path, class:"btn btn-primary" do
+					Nosotros
+			%h1.white-text.Kostic.big.bold
+				Aqui encontrarás todo tipo de repuestos para autos
 
 		.col-md-12.inline-block	
 			=image_tag "mono.png", width:"620"

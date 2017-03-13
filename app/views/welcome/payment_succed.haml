@@ -1,9 +1,21 @@
 -if user_signed_in?
+	
 	.col-md-10.center-block.no-float
 		%article.card.large-padding
-			%h1 su peticion ha sido mandada
-			%p Lo contactaremos a la brevedad
-			%section.big-top-space
+			.col-md-12
+				Carrito de compras Numero :
+				=@shopping_cart.id
+				%h1 Como comprar
+				
+				.col-md-12
+					=link_to carrito_path,class:"btn btn-success" do
+						Paso 2
+					Ve el costo total de tu pedido en el carro de compras
+				.col-md-12.bigger.green-text
+					
+					Paso 3 -->
+					Contactamos
+			%section.big-top-space.text-center
 				%h2 Resumen de tu pedido
 				%table.table.table-striped.table-hover.medium#table_shopping_cart
 					%thead
@@ -16,8 +28,8 @@
 								%th= product.name
 								%th= product.pricing
 			-if user_signed_in?
-				%p.grey-text.medium 
-					Usuario:
+				%p.green-text.medium 
+					Le hemos enviado un correo a :
 					= current_user.email
 				%h3.blue-text.big 
 					Informacion de contacto:
